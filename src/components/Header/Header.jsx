@@ -3,8 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 // import css from './Header.module.css';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../AuthNav/AuthNav';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 export const Header = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <header>
       <Link>Nanny.Services</Link>
@@ -16,7 +19,6 @@ export const Header = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/nannies">Nannies</NavLink>
         {isLoggedIn && <NavLink to="/favorites">Favorites</NavLink>}
-
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </nav>
     </header>

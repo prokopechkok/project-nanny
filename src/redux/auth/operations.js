@@ -8,8 +8,8 @@ import {
 } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
 
-export const register = createAsyncThunk(
-  'auth/register',
+export const registerUser = createAsyncThunk(
+  'auth/registerUser',
   async ({ email, password, name }, { rejectWithValue }) => {
     try {
       const userData = await createUserWithEmailAndPassword(
