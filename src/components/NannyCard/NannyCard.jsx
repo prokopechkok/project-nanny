@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import css from './NannyCard.module.css';
+import ReviewsBlock from '../ReviewsBlock/ReviewsBlock';
 const NannyCard = ({ nanny }) => {
+  const [isReadMoreOpen, setIsReadMoreOpen] = useState(false);
   // const {
   //   name,
   //   avatar_url,
@@ -34,7 +37,17 @@ const NannyCard = ({ nanny }) => {
         <ul></ul>
         <p className={css.description}>{nanny.about}</p>
       </div>
-      <button type="button">Read more</button>
+      {isReadMoreOpen ? (
+        <ReviewsBlock
+          reviews={nanny.reviews}
+          avatar={nanny.avatar_url}
+          name={nanny.name}
+        />
+      ) : (
+        <button type="button" onClick={() => setIsReadMoreOpen(true)}>
+          Read more
+        </button>
+      )}
     </div>
   );
 };
