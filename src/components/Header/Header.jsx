@@ -1,10 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
-// import { Icon } from '../Icon/Icon';
 // import css from './Header.module.css';
-import UserMenu from '../UserMenu/UserMenu';
-import AuthNav from '../AuthNav/AuthNav';
+// import { UserMenu, AuthNav } from '../../components';
 import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import UserMenu from '../UserMenu/UserMenu';
+import AuthNav from '../AuthNav/AuthNav';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
