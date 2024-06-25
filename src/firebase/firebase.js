@@ -3,7 +3,7 @@ import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 const API_KEY = import.meta.env.VITE_FIREBASE_API_KEY;
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: API_KEY,
   authDomain: 'nannies-c386f.firebaseapp.com',
   databaseURL:
