@@ -7,6 +7,7 @@ import AuthNav from '../AuthNav/AuthNav';
 import { Icon } from '../Icon/Icon';
 import { useState } from 'react';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import clsx from 'clsx';
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -16,13 +17,13 @@ export const Header = () => {
   const selectHeader = () => {
     return location.pathname === '/' ? css.home : css.nannies;
   };
-
   const onBurgerClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  // const isActive = (pathname) => {
-  //   return location.pathname === pathname ? css.active : '';
-  // };
+  const isActive = (pathname) => {
+    return location.pathname === pathname ? css.active : '';
+  };
+
   return (
     <header className={selectHeader()}>
       <div className={css.headerLine}>
@@ -34,23 +35,31 @@ export const Header = () => {
         </button>
         {isMenuOpen && <BurgerMenu onBurgerClick={onBurgerClick} />}
         {
-          <nav className={css.navigation}>
-            <ul className={css.navList}>
-              <li className={css.navLink}>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li className={css.navLink}>
-                <NavLink to="/nannies">Nannies</NavLink>
-              </li>
+          <div className={css.navigation}>
+            <nav className={css.navList}>
+              <NavLink className={clsx(css.navLink, isActive('/'))} to="/">
+                Home
+              </NavLink>
+
+              <NavLink
+                className={clsx(css.navLink, isActive('/nannies'))}
+                to="/nannies"
+              >
+                Nannies
+              </NavLink>
+
               {isLoggedIn && (
-                <li>
-                  <NavLink to="/favorites">Favorites</NavLink>
-                </li>
+                <NavLink
+                  className={clsx(css.navLink, isActive('/favorites'))}
+                  to="/favorites"
+                >
+                  Favorites
+                </NavLink>
               )}
-            </ul>
+            </nav>
 
             {isLoggedIn ? <UserMenu /> : <AuthNav />}
-          </nav>
+          </div>
         }
       </div>
     </header>

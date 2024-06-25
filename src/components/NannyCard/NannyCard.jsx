@@ -39,6 +39,7 @@ const NannyCard = ({ nanny }) => {
       if (favorites.some((favorite) => favorite.id === id)) {
         setIsFavorite(true);
       }
+      // setIsFavorite(favorites.some((favorite) => favorite.id === id));
     }
   }, [favorites, id, isLoggedIn]);
 
@@ -78,11 +79,6 @@ const NannyCard = ({ nanny }) => {
               <div className={css.separator} />
               <div className={css.ratingWrapper}>
                 <Icon id="star" className={css.starIcon} />
-                {/* <img
-                  src="../../assets/images/star.png"
-                  alt="star"
-                  className={css.starIcon}
-                /> */}
                 <p>Rating: {rating}</p>
               </div>
               <div className={css.separator} />

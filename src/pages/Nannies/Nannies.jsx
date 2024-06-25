@@ -1,19 +1,20 @@
 import { useSelector } from 'react-redux';
 import { selectError } from '../../redux/auth/selectors';
 import css from './Nannies.module.css';
-// import Loader from '../../components/Loader/Loader';
+import Loader from '../../components/Loader/Loader';
 import Filter from '../../components/Filter/Filter';
 import NanniesList from '../../components/NanniesList/NanniesList';
 import Error from '../../components/Error/Error';
+import { selectIsLoading } from '../../redux/nannies/selectors';
 
 const Nannies = () => {
-  // const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
   return (
     <div className={css.container}>
       <Filter />
       <NanniesList />
-      {/* {isLoading && <Loader />} */}
+      {isLoading && <Loader />}
       {isError && <Error />}
     </div>
   );

@@ -1,26 +1,5 @@
-/* .container {
-  width: 320px;
-  padding: 0 20px;
-  margin: 0 auto;
-  height: 100vh;
-  border-radius: 30px;
-  background-color: var(--blue);
-} */
-
-/* @media (min-width: 768px) {
-  .container {
-    width: 768px;
-    padding: 0 32px;
-  }
-} */
-/* @media (min-width: 1440px) {
-  .container {
-    width: 1440px;
-    height: 736px;
-  }
-} */
 .container {
   position: relative;
-  margin: 0 auto;
-  margin: 32px;
+  max-width: 1440px;
+  margin: 32px auto;
 }

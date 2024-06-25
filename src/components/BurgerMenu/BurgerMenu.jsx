@@ -8,26 +8,33 @@ import AuthNav from '../AuthNav/AuthNav';
 
 const BurgerMenu = ({ onBurgerClick }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  // const { name } = useSelector(selectUser);
 
   return (
-    <div className={css.burgerMenu}>
-      <button className={css.closeBtn} onClick={onBurgerClick}>
-        <Icon id="close" className={css.closeIcon} />
-      </button>
-      {/* {isLoggedIn && (
-        <div className={css.user}>
-          <Icon id="user" className={css.userIcon} />
+    <div className={css.container}>
+      <div className={css.burgerMenu}>
+        <button className={css.closeBtn} onClick={onBurgerClick}>
+          <Icon id="close" className={css.closeIcon} />
+        </button>
 
-          <p className={css.userName}>{name}</p>
-        </div>
-      )} */}
-      <nav className={css.mobileNav}>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/nannies">Nannies</NavLink>
-        {isLoggedIn && <NavLink to="/favorites">Favorites</NavLink>}
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </nav>
+        <nav className={css.mobileNav}>
+          <NavLink to="/" onClick={onBurgerClick}>
+            Home
+          </NavLink>
+          <NavLink to="/nannies" onClick={onBurgerClick}>
+            Nannies
+          </NavLink>
+          {isLoggedIn && (
+            <NavLink to="/favorites" onClick={onBurgerClick}>
+              Favorites
+            </NavLink>
+          )}
+        </nav>
+        {isLoggedIn ? (
+          <UserMenu onClick={onBurgerClick} />
+        ) : (
+          <AuthNav onClick={onBurgerClick} />
+        )}
+      </div>
     </div>
   );
 };

@@ -1,26 +1,27 @@
 .home {
   position: absolute;
   top: 0px;
-  left: 0;
-  width: 320px;
-  z-index: 500;
-
-  background-color: transparent;
+  left: 0px;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--blue);
   color: var(--white);
 }
 .home::after,
 .nannies::after {
-  margin-top: 0;
+  margin-top: 30px;
   content: '';
   border-bottom: 1px solid var(--white-40);
   width: 100%;
   display: block;
 }
-.home::after {
-  margin-top: 30px;
-}
+
 .nannies {
-  width: 320px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 
   background-color: var(--blue);
   color: var(--white);
@@ -32,7 +33,8 @@
   letter-spacing: -0.02em;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px;
+  padding: 0 24px;
+  margin-top: 30px;
 }
 .logo {
   font-weight: 500;
@@ -49,16 +51,22 @@
 .navLink {
   position: relative;
   transition: transform 0.3s ease-in-out;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
-.navLink.active::after {
+
+.active::after {
   position: absolute;
   content: '';
   width: 4px;
   height: 4px;
   border-radius: 50%;
+  transform: translateX(-50%);
   background-color: var(--white);
-  bottom: -6px;
-  left: calc(50% - 4px);
+  bottom: -10px;
+  left: 50%;
 }
 @media (max-width: 767px) {
   .navigation {
@@ -68,11 +76,11 @@
 @media (min-width: 768px) {
   .home,
   .nannies {
-    width: 768px;
+    width: 100%;
   }
 
   .headerLine {
-    padding: 0 64px;
+    padding: 0 32px;
   }
   .logo {
     font-size: 18px;
@@ -83,26 +91,28 @@
     justify-content: flex-end;
     align-items: center;
     gap: 30px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.25;
     letter-spacing: -0.01em;
   }
   .navList {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 20px;
   }
   .burgerBtn {
     display: none;
   }
 }
 @media (min-width: 1440px) {
-  .home,
+  .home {
+    width: 1440px;
+  }
   .nannies {
     width: 1440px;
   }
   .home {
-    top: 30px;
+    background-color: transparent;
   }
 
   .home .headerLine {
@@ -110,11 +120,14 @@
   }
   .nannies .headerLine {
     padding: 30px 128px;
+    margin-top: 0;
   }
   .logo {
     font-size: 24px;
   }
-
+  .nannies::after {
+    margin-top: 0;
+  }
   .navigation {
     font-size: 16px;
   }
@@ -132,6 +145,8 @@
     width: 8px;
     height: 8px;
     bottom: -12px;
-    left: calc(50% - 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
   }
 }

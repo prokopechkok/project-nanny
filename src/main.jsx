@@ -8,6 +8,7 @@ import { persistor, store } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';
 import Loader from './components/Loader/Loader.jsx';
 import App from './components/App/App.jsx';
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 472px;
+  max-width: 472px;
 }
 .titleWrap {
   display: flex;

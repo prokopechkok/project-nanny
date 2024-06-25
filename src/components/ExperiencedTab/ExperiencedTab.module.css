@@ -1,46 +1,51 @@
 .container {
-  position: absolute;
-  right: 50px;
-  bottom: 50px;
-  width: 284px;
-  height: 118px;
-  border-radius: 30px;
-  background-color: var(--white);
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
+  display: none;
 }
-.square {
-  border-radius: 13px;
-  width: 54px;
-  height: 54px;
-  background-color: var(--blue);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-}
-.checkIcon {
-  width: 20px;
-  height: 16px;
-  fill: var(--white);
-  stroke: var(--white);
-}
-.textWrapper {
-  height: 54px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.text {
-  font-weight: 400;
-  font-size: 16px;
-  color: var(--dark-50);
-}
-.number {
-  font-weight: 700;
-  font-size: 24px;
-  color: var(--dark);
+@media (min-width: 1440px) {
+  .container {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    width: 284px;
+    height: 118px;
+    border-radius: 30px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+  .square {
+    border-radius: 13px;
+    width: 54px;
+    height: 54px;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+  }
+  .checkIcon {
+    width: 20px;
+    height: 16px;
+    fill: var(--white);
+    stroke: var(--white);
+  }
+  .textWrapper {
+    height: 54px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .text {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--dark-50);
+  }
+  .number {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--dark);
+  }
 }

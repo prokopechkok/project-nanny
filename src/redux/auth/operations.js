@@ -55,7 +55,7 @@ export const logout = createAsyncThunk(
       await signOut(auth);
       return;
     } catch (error) {
-      return rejectWithValue(error.message);
+      return rejectWithValue(error);
     }
   }
 );
@@ -65,11 +65,12 @@ export const refreshUser = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       return new Promise((res, rej) => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, async (user) => {
           if (user) {
             const name = user.displayName;
             const email = user.email;
-            res({ email, name });
+            const token = await user.getIdToken();
+            res({ email, name, token });
           } else {
             rej('Cannot get user');
           }
@@ -77,7 +78,7 @@ export const refreshUser = createAsyncThunk(
         });
       });
     } catch (error) {
-      return rejectWithValue(error.message);
+      return rejectWithValue(error);
     }
   }
 );

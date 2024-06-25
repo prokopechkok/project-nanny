@@ -61,7 +61,7 @@ const Filter = () => {
               key={index}
               className={clsx(
                 css.option,
-                `${selectedFilter === option ? css.active : ''}`
+                `${selectedFilter === option ? css.selected : ''}`
               )}
               onClick={() => handleSelectedFilter(option)}
             >

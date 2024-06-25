@@ -1,7 +1,52 @@
 .wrapper {
-  display: none;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
 
+  color: var(--white);
+  background-color: transparent;
+}
+.nameBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.iconBox {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--blue);
+  stroke: var(--blue);
+}
+.name {
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.11;
+  letter-spacing: -0.18px;
+}
+.logoutBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 39px;
+  border-radius: 30px;
+  border: solid 1px var(--white-40);
+  color: var(--white);
+}
 @media only screen and (min-width: 768px) {
   .wrapper {
     display: flex;
@@ -9,12 +54,12 @@
     justify-content: end;
     gap: 24px;
 
-    color: var(--white);
-    background-color: transparent;
+    /* color: var(--white);
+    background-color: transparent; */
   }
   .nameBlock {
-    display: flex;
-    flex-direction: row;
+    /* display: flex; */
+    /* flex-direction: row; */
     justify-content: start;
     align-items: center;
     gap: 14px;
@@ -22,25 +67,20 @@
   .iconBox {
     width: 40px;
     height: 40px;
-    border-radius: 10px;
+    /* border-radius: 10px;
     background-color: var(--white);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
   }
-  .userIcon {
-    width: 16px;
-    height: 16px;
-    fill: var(--blue);
-    stroke: var(--blue);
-  }
+
   .name {
     font-size: 18px;
-    font-weight: 500;
+    /* font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.11;
-    letter-spacing: -0.18px;
+    letter-spacing: -0.18px; */
   }
   .logoutBtn {
     display: flex;

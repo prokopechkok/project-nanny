@@ -1,39 +1,71 @@
 .authBtns {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 .button {
+  height: 48px;
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 14px 40px;
   color: var(--white);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.25;
-  letter-spacing: -0.01em;
+  letter-spacing: normal;
+  border: 1px solid var(--white-40);
+  /* background-color: transparent;
+  border: 1px solid var(--white-40); */
 }
 .loginBtn {
   background-color: transparent;
   border: 1px solid var(--white-40);
 }
 .loginBtn:hover,
-.loginBtn:focus {
-  background-color: var(--blue);
-  border: none;
-}
-.regBtn {
-  border: none;
-  background-color: var(--blue);
-}
+.loginBtn:focus,
 .regBtn:hover,
 .regBtn:focus {
-  background-color: transparent;
-  border: 1px solid var(--white-40);
+  background-color: var(--white);
+  border: none;
+  color: var(--blue);
+  cursor: pointer;
 }
+
 @media only screen and (min-width: 768px) {
   .authBtns {
     display: flex;
+    flex-direction: row;
     gap: 8px;
+    align-items: center;
+    justify-content: end;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .button {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  }
+  .loginBtn {
+    background-color: transparent;
+    border: 1px solid var(--white-40);
+  }
+  .loginBtn:hover,
+  .loginBtn:focus {
+    border-color: var(--blue);
+    border-color: transparent;
+  }
+  .regBtn {
+    /* border-color: transparent; */
+    background-color: var(--blue);
+  }
+  .regBtn:hover,
+  .regBtn:focus {
+    background-color: var(--white);
+    color: var(--blue);
   }
 }

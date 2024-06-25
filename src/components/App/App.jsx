@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIsRefreshing } from '../../redux/auth/selectors';
 import { refreshUser } from '../../redux/auth/operations';
 import Loader from '../Loader/Loader';
+import { loadAuthDataFromLocalStorage } from '../../redux/auth/slice';
 
 const Home = lazy(() => import('../../pages/Home/Home'));
 const Nannies = lazy(() => import('../../pages/Nannies/Nannies'));
@@ -17,7 +18,10 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(refreshUser);
+    const authData = loadAuthDataFromLocalStorage();
+    if (authData && authData.token) {
+      dispatch(refreshUser(authData.token));
+    }
   }, [dispatch]);
 
   return isRefreshing ? (

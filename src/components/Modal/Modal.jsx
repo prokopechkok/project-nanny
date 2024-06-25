@@ -5,7 +5,7 @@ import css from './Modal.module.css';
 const customStyles = {
   overlay: {
     backgroundColor: 'rgba(11, 11, 11, 0.6)',
-    zIndex: 100,
+    zIndex: 300,
   },
   content: {
     top: '50%',
@@ -18,8 +18,10 @@ const customStyles = {
     borderRadius: '30px',
     border: 'none',
     width: 'fit-content',
-    maxWidth: '600px',
-    minHeight: '489px',
+    maxWidth: '90%',
+    height: 'fit-content',
+    maxHeight: '90vh',
+    overflowY: 'auto',
     backgroundColor: ' #fbfbfb',
     position: 'relative',
   },
@@ -33,6 +35,7 @@ const Modal = ({ isOpen, onClose, children }) => {
       onRequestClose={onClose}
       style={customStyles}
       autoFocus={true}
+      className={css.modalContent}
     >
       <div>
         <button onClick={onClose} className={css.closeBtn}>
