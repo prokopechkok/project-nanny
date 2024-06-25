@@ -1,1 +1,0 @@
-import{j as r}from"./index-71a9c4d4.js";const e=()=>r.jsx("div",{children:"Favorites Page"});export{e as default};
