@@ -1,29 +1,15 @@
-import { useState } from 'react';
+import css from './ReviewsBlock.module.css';
 import Review from '../Review/Review';
-import Modal from '../Modal/Modal';
-import AppointmentForm from '../AppointmentForm/AppointmentForm';
 
-const ReviewsBlock = ({ reviews, avatar, name }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const ReviewsBlock = ({ reviews }) => {
   return (
-    <div>
-      <ul>
-        {reviews.map((review) => {
-          <li>
-            <Review review={review} />
-          </li>;
-        })}
-      </ul>
-      <button type="button" onClick={() => setIsModalOpen(true)}>
-        Make an appointment
-      </button>
-
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <AppointmentForm name={name} avatar={avatar} />
-        </Modal>
-      )}
-    </div>
+    <ul className={css.list}>
+      {reviews.map((review) => (
+        <li key={review.reviewer}>
+          <Review review={review} />
+        </li>
+      ))}
+    </ul>
   );
 };
 

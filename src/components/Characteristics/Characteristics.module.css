@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
+  gap: 8px;
+}
+.listItem {
+  border-radius: 24px;
+  padding: 8px 16px;
+  height: 40px;
+  width: fit-content;
+  background-color: var(--white-two);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--medium-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.listItem span {
+  color: var(--dark);
+}
+.age {
+  text-decoration: underline;
+}

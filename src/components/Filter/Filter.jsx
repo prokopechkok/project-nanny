@@ -41,20 +41,21 @@ const Filter = () => {
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOut);
+
     return () => {
       document.removeEventListener('mousedown', handleClickOut);
     };
   });
 
   return (
-    <div>
-      <p>Filters</p>
+    <div className={css.wrapper}>
+      <p className={css.legend}>Filters</p>
       <button className={css.dropdown} onClick={handleDropdown}>
         {selectedFilter}
         <Icon id="arrow-down" className={css.icon} />
       </button>
       {isOpen && (
-        <ul ref={filterRef}>
+        <ul ref={filterRef} className={css.optionsList}>
           {filterOptions.map((option, index) => (
             <li
               key={index}

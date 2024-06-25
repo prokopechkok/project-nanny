@@ -8,12 +8,20 @@ const UserMenu = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <div>
-        <Icon id="user" className={css.userIcon} />
-        <p>{user.name}</p>
+    <div className={css.wrapper}>
+      <div className={css.nameBlock}>
+        <div className={css.iconBox}>
+          <Icon id="user" className={css.userIcon} />
+        </div>
+        <p className={css.name}>
+          {user.name.charAt(0).toUpperCase() + user.name.slice(1)}
+        </p>
       </div>
-      <button type="button" onClick={() => dispatch(logout())}>
+      <button
+        type="button"
+        onClick={() => dispatch(logout())}
+        className={css.logoutBtn}
+      >
         Log Out
       </button>
     </div>

@@ -1,0 +1,209 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 472px;
+}
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.title {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+}
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--dark-50);
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+
+  /* letter-spacing: normal; */
+  text-align: left;
+}
+.avatarWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  justify-content: start;
+  align-items: center;
+  height: 44px;
+}
+.avatar {
+  border-radius: 15px;
+  width: 44px;
+  height: 44px;
+}
+.nameWrapper {
+  width: fit-content;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--medium-grey);
+}
+.name {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--dark);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.halfInputs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 16px;
+}
+.halfInputs .input {
+  width: 232px;
+}
+.input,
+.customTime {
+  width: 100%;
+  border: 1px solid var(--dark-10);
+  border-radius: 12px;
+  padding: 16px;
+  height: 52px;
+  color: var(--dark);
+  outline: none;
+}
+.input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--dark);
+}
+.timeInput {
+  position: relative;
+}
+.clockIcon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.5px;
+  stroke: var(--dark);
+  fill: var(--white);
+}
+/* .react-datepicker {
+  width: 100%;
+} */
+/* .react-datepicker__triangle {
+  display: none;
+} */
+/* .react-datepicker-popper,
+.react-datepicker .react-datepicker--time-only,
+.react-datepicker__time-container,
+.react-datepicker__time {
+  width: 150px;
+  height: 179px;
+} */
+.popper {
+  width: 150px;
+  height: 179px;
+  text-align: center;
+}
+
+:global(.react-datepicker--time-only) {
+  width: 150px;
+  height: 179px;
+  border: none;
+}
+:global(.react-datepicker__time-container) {
+  width: 150px;
+  height: 179px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 20px 69px 0 rgba(0, 0, 0, 0.07);
+  background-color: var(--white);
+  text-align: center;
+}
+:global(.react-datepicker__header) {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--dark);
+  background-color: var(--white);
+  border: none;
+}
+:global(.react-datepicker__triangle) {
+  display: none;
+}
+:global(
+    .react-datepicker__time-list-item--selected,
+    .react-datepicker__time-list-item:hover
+  ) {
+  color: var(--dark);
+  background-color: transparent;
+}
+:global(.react-datepicker__time-list::-webkit-scrollbar) {
+  width: 3px;
+}
+
+:global(.react-datepicker__time-list::-webkit-scrollbar-track) {
+  background-color: transparent;
+}
+
+:global(.react-datepicker__time-list::-webkit-scrollbar-thumb) {
+  background-color: var(--blue);
+}
+:global(.react-datepicker__time-box) {
+  /* height: 124px; */
+  /* border: none !important; */
+  width: 150px;
+  /* color: var(--dropdown_color) !important; */
+}
+.textarea {
+  width: 100%;
+  height: 116px;
+}
+.submitBtn {
+  border-radius: 30px;
+  border: none;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 52px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  background-color: var(--blue);
+  margin-top: 22px;
+}
+.passWrapper {
+  position: relative;
+}
+.eyeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+.eyeIcon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2px;
+  stroke: var(--dark);
+  fill: var(--white);
+}

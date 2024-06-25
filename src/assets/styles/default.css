@@ -5,6 +5,7 @@
   --blue: #0957c3;
   --white-40: rgba(251, 251, 251, 0.4);
   --dark-10: rgba(17, 16, 28, 0.1);
+  --dark-20: rgba(17, 16, 28, 0.2);
   --dark-30: rgba(17, 16, 28, 0.3);
   --medium-grey: #8a8a89;
   --white-two: #f3f3f3;
@@ -27,9 +28,7 @@ html {
 }
 body {
   background-color: var(--white);
-  /* background-size: auto 100%;
-  background-position: center center; */
-  /* background-repeat: no-repeat; */
+
   font-family: var(--font-family);
   font-size: 16px;
   font-weight: 400;

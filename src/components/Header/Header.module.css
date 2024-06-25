@@ -1,8 +1,137 @@
-.button {
-  border: 1px solid red;
+.home {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 320px;
+  z-index: 500;
+
   background-color: transparent;
+  color: var(--white);
 }
-.button svg {
-  fill: blue;
-  stroke: blue;
+.home::after,
+.nannies::after {
+  margin-top: 0;
+  content: '';
+  border-bottom: 1px solid var(--white-40);
+  width: 100%;
+  display: block;
+}
+.home::after {
+  margin-top: 30px;
+}
+.nannies {
+  width: 320px;
+
+  background-color: var(--blue);
+  color: var(--white);
+}
+.headerLine {
+  display: flex;
+  font-weight: normal;
+  line-height: 1.17;
+  letter-spacing: -0.02em;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+.logo {
+  font-weight: 500;
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+.burgerIcon {
+  fill: var(--white);
+  stroke: var(--white);
+  width: 25px;
+  height: 25px;
+}
+
+.navLink {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+.navLink.active::after {
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--white);
+  bottom: -6px;
+  left: calc(50% - 4px);
+}
+@media (max-width: 767px) {
+  .navigation {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .home,
+  .nannies {
+    width: 768px;
+  }
+
+  .headerLine {
+    padding: 0 64px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .navList {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  .burgerBtn {
+    display: none;
+  }
+}
+@media (min-width: 1440px) {
+  .home,
+  .nannies {
+    width: 1440px;
+  }
+  .home {
+    top: 30px;
+  }
+
+  .home .headerLine {
+    padding: 0 96px;
+  }
+  .nannies .headerLine {
+    padding: 30px 128px;
+  }
+  .logo {
+    font-size: 24px;
+  }
+
+  .navigation {
+    font-size: 16px;
+  }
+  .home .navigation {
+    gap: 92px;
+  }
+  .nannies .navigation {
+    gap: 217px;
+  }
+  .navList {
+    gap: 40px;
+  }
+
+  .active::after {
+    width: 8px;
+    height: 8px;
+    bottom: -12px;
+    left: calc(50% - 8px);
+  }
 }

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Modal from '../Modal/Modal';
 import LoginForm from '../LoginForm/LoginForm';
 import RegistrationForm from '../RegistrationForm/RegistrationForm';
+import css from './AuthNav.module.css';
+import clsx from 'clsx';
 
 const AuthNav = () => {
   const [isLogModal, setIsLogModal] = useState(false);
@@ -9,14 +11,22 @@ const AuthNav = () => {
 
   return (
     <div>
-      <ul>
+      <ul className={css.authBtns}>
         <li>
-          <button type="button" onClick={() => setIsLogModal(true)}>
+          <button
+            type="button"
+            onClick={() => setIsLogModal(true)}
+            className={clsx(css.button, css.loginBtn)}
+          >
             Log In
           </button>
         </li>
         <li>
-          <button type="button" onClick={() => setIsRegistModal(true)}>
+          <button
+            type="button"
+            onClick={() => setIsRegistModal(true)}
+            className={clsx(css.button, css.regBtn)}
+          >
             Registration
           </button>
         </li>

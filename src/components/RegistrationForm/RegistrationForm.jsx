@@ -5,6 +5,9 @@ import * as yup from 'yup';
 import { selectError } from '../../redux/auth/selectors';
 import { registerUser } from '../../redux/auth/operations';
 import { toast } from 'react-toastify';
+import css from './RegistrationForm.module.css';
+import { useState } from 'react';
+import { Icon } from '../Icon/Icon';
 
 const registrationSchema = yup
   .object({
@@ -25,6 +28,7 @@ const registrationSchema = yup
 
 const RegistrationForm = () => {
   const error = useSelector(selectError);
+  const [isVisible, setIsVisible] = useState(false);
 
   const {
     register,
@@ -42,27 +46,56 @@ const RegistrationForm = () => {
       toast.error('Invalid login or password.');
     }
   };
+  const handlePassVisible = () => {
+    setIsVisible((prevState) => !prevState);
+  };
   return (
-    <div>
-      <h2>Registration</h2>
-      <p>
-        Thank you for your interest in our platform! In order to register, we
-        need some information. Please provide us with the following information.
-      </p>
-      <form onSubmit={handleSubmit(onFormSubmit)}>
+    <div className={css.container}>
+      <div className={css.titleWrap}>
+        <h2 className={css.title}>Registration</h2>
+        <p className={css.text}>
+          Thank you for your interest in our platform! In order to register, we
+          need some information. Please provide us with the following
+          information.
+        </p>
+      </div>
+      <form onSubmit={handleSubmit(onFormSubmit)} className={css.form}>
         <div>
-          <input {...register('name')} placeholder="Name" />
+          <input
+            {...register('name')}
+            placeholder="Name"
+            className={css.input}
+          />
           <p>{errors.name?.message}</p>
         </div>
         <div>
-          <input {...register('email')} placeholder="Email" />
+          <input
+            {...register('email')}
+            placeholder="Email"
+            className={css.input}
+          />
           <p>{errors.email?.message}</p>
         </div>
-        <div>
-          <input {...register('password')} placeholder="Password" />
+        <div className={css.passWrapper}>
+          <input
+            {...register('password')}
+            placeholder="Password"
+            className={css.input}
+          />
           <p>{errors.password?.message}</p>
+          <button
+            type="button"
+            className={css.eyeBtn}
+            onClick={handlePassVisible}
+          >
+            {isVisible ? (
+              <Icon id="eye" className={css.eyeIcon} />
+            ) : (
+              <Icon id="eye-off" className={css.eyeIcon} />
+            )}
+          </button>
         </div>
-        <button type="submit" onSubmit={onFormSubmit}>
+        <button type="submit" onSubmit={onFormSubmit} className={css.submitBtn}>
           Sign Up
         </button>
       </form>

@@ -9,6 +9,7 @@ import {
 import { selectFilter } from '../../redux/filter/selectors';
 import NannyCard from '../NannyCard/NannyCard';
 import { sortNannies } from '../../utils/helpers';
+import css from './NanniesList.module.css';
 
 const NanniesList = () => {
   const dispatch = useDispatch();
@@ -27,10 +28,10 @@ const NanniesList = () => {
 
   const sortedNannies = sortNannies(nannies, filter);
   return (
-    <>
+    <div className={css.container}>
       {sortedNannies.length > 0 ? (
-        <div>
-          <ul>
+        <div className={css.listWrapper}>
+          <ul className={css.cardsList}>
             {sortedNannies.map((nanny) => (
               <li key={nanny.id}>
                 <NannyCard nanny={nanny} />
@@ -40,15 +41,19 @@ const NanniesList = () => {
           {message || sortedNannies === 0 ? (
             <p>{message}</p>
           ) : (
-            <button type="button" onClick={loadMore}>
+            <button
+              type="button"
+              onClick={loadMore}
+              className={css.loadMoreBtn}
+            >
               Load more
             </button>
           )}
         </div>
       ) : (
-        <p>No nannies to show</p>
+        <p className={css.error}>No nannies to show</p>
       )}
-    </>
+    </div>
   );
 };
 
