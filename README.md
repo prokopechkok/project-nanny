@@ -1,108 +1,67 @@
-# React + Vite template
+Nanny-services
 
-Цей проєкт було створено за допомогою [Create Vite](https://vitejs.dev/). Для
-знайомства і налаштування додаткових можливостей
-[звернися до документації](https://vitejs.dev/guide/).
+This project was developed using Create Vite.
 
-## Створення репозиторію за шаблоном
+Application Overview
 
-Використовуй цей репозиторій організації GoIT як шаблон для створення
-репозиторію свого проєкту. Для цього натисни на кнопку `"Use this template"` і
-обери опцію `"Create a new repository"`, як показано на зображенні.
+This app is designed for a company that provides babysitting services.
 
-![Creating repo from a template step 1](./src/assets/template-step-1.png)
+About the Project
 
-На наступному кроці відкриється сторінка створення нового репозиторію. Заповни
-поле його імені, переконайся що репозиторій публічний, після чого натисни кнопку
-`"Create repository from template"`.
+Through this application, you can find the ideal babysitter for your child. Users can sort the list of babysitters based on various criteria and create a personalized list of their favorite babysitters.
 
-![Creating repo from a template step 2](./src/assets/template-step-2.png)
+Project Description
 
-Після того як репозиторій буде створено, необхідно перейти в налаштування
-створеного репозиторію на вкладку `Settings` > `Actions` > `General` як показано
-на зображенні.
+Nanny-services, created with the help of Create Vite, is an application tailored for companies offering babysitting services. This app assists parents in finding the best babysitter for their children by providing sorting and filtering options. Users can also maintain a favorites list of babysitters they prefer.
 
-![Settings GitHub Actions permissions step 1](./src/assets/gh-actions-perm-1.png)
+Application Features
 
-Проскроливши сторінку до самого кінця, у секції `"Workflow permissions"` вибери
-опцію `"Read and write permissions"` і постав галочку в чекбоксі. Це необхідно
-для автоматизації процесу деплою проєкту.
+The application comprises three main pages: 
 
-![Settings GitHub Actions permissions step 2](./src/assets/gh-actions-perm-2.png)
+Home page
+![image](https://github.com/prokopechkok/project-nanny/assets/104778176/7b438097-d592-4016-b01f-4a174c643502)
 
-Тепер у тебе є особистий репозиторій проєкту, зі структурою файлів і папок
-репозиторія-шаблону. Далі працюй з ним як з будь-яким іншим особистим
-репозиторієм, клонуй його собі на комп'ютер, пиши код, роби комміти і відправляй
-їх на GitHub.
 
-## Підготовка до роботи
+Nannies page 
 
-1. Переконайся, що на комп'ютері встановлена LTS-версія Node.js.
-   [Скачай і встанови](https://nodejs.org/en/) її якщо необхідно.
-2. Встановіть базові залежності проекту командою `npm install`.
-3. Запустіть режим розробки, виконавши команду `npm run dev`.
-4. Перейди в браузері за адресою, що зазначено в терміналі.
+![image](https://github.com/prokopechkok/project-nanny/assets/104778176/50f2556e-27f5-43ba-8293-f96f9d41bd3a)
 
-## Деплой
+Favorites page
 
-Продакшн версія проєкту буде автоматично збиратися і деплоїтися на GitHub Pages,
-у гілку `gh-pages`, щоразу, коли оновлюється гілка `main`. Наприклад, після
-прямого пушу або прийнятого пул-реквесту. Для цього необхідно у файлі
-`vite.config.js` відредагувати поле `base`, замінивши `react_vite` на свою назву
-репозиторію `"/your_repo_name"`, і відправити зміни на GitHub.
+![image](https://github.com/prokopechkok/project-nanny/assets/104778176/0699819d-0b10-47d3-86cd-f8b3968fd4ef)
 
-Далі необхідно зайти в налаштування GitHub-репозиторію (`Settings` > `Pages`) і
-виставити роздачу продакшн версії файлів із папки `/root` гілки `gh-pages`, якщо
-це не було зроблено автоматично.
 
-![GitHub Pages settings](./src/assets/repo-settings.png)
+Technologies Used
 
-### Статус деплоя
+JavaScript
+React
+HTML
+CSS
+GitHub
+Vite
 
-Статус деплою крайнього коміту відображається іконкою біля його ідентифікатора.
+Libraries Utilized
 
-- **Жовтий колір** - виконується збірка і деплой проєкту.
-- **Зелений колір** - деплой завершився успішно.
-- **Червоний колір** - під час збирання або деплою сталася помилка.
+react-hook-form: For handling form validation.
+react-loader-spinner: For loading animations.
+react-modal: For creating modals.
+react-redux: For state management.
+react-router-dom: For routing.
+redux-persist: For persisting the Redux state.
+yup: For schema validation.
+firebase: For backend and authentication.
 
-Детальнішу інформацію про статус можна подивитися, клікнувши на іконку, і в
-випадаючому вікні перейти за посиланням `Details`.
 
-![Deployment status](./src/assets/deploy-status.png)
 
-### Жива сторінка
+Key Features
 
-Через якийсь час, зазвичай кілька хвилин, живу сторінку можна буде подивитися за
-адресою, вказаною в налаштуваннях GitHub-репозиторію (`Settings` > `Pages`).
+Home Page: Introduction and overview of the services.
+Nannies List: Detailed list of available babysitters with sorting options.
+Favorites Page: A dedicated page to view and manage babysitters marked as favorites.
+Purpose
+The purpose of this application is to streamline the process of finding and selecting the best babysitter for your child, ensuring convenience and reliability for parents.
 
-![GitHub-pages URL](./src/assets/gh-pages-url.png)
-
-Якщо відкривається порожня сторінка, переконайся що у вкладці `Console` немає
-помилок пов'язаних із неправильними шляхами до CSS і JS файлів проекту
-(**404**). Швидше за все найімовірніше, у тебе неправильне значення поля `base`
-у файлі `vite.config.js`.
-
-### Маршрутизація
-
-Якщо додаток використовує бібліотеку `react-router-dom` для маршрутизації,
-необхідно додатково налаштувати компонент `<BrowserRouter>`, передавши в пропе
-`basename` точну назву твого репозиторію. Слеш на початку рядка обов'язковий.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-### Додавання змінних в  .env
-Для зберігання конфігураційних даних, таких як API ключі, адреси серверів, порти та інші змінні використовуйте файл `.env`. Для цього необхідно з назви файлу `.env.template` видалити зайві ".template",після чого файл відповідатиме умовам файлу `.ignore` і буде зберігатися лише локально, не публікуючись на віддаленому репозиторії з метою безпеки. Задля використання змінних на GitHub-pages усі змінні, передбачені файлом .env, слід додати до файлу `.github/workflows/deploy.yml`, а також до налаштувань репозиторію. Для цього слід перейти (`Settings` > `Secrets and variables` > `Actions`)
-
-![Add enviroments from .env](./src/assets/secrets.png)
-
-## Як це працює
-
-1. Після кожного пушу в гілку `main` GitHub-репозиторію, запускається
-   спеціальний скрипт (GitHub Action) з файлу `.github/workflows/deploy.yml`.
-2. Усі файли репозиторію копіюються на сервер, де проєкт ініціалізується і
-   проходить збірку перед деплоєм. 3 Якщо всі кроки пройшли успішно, зібрана
-   продакшн-версія файлів проєкту відправляється в гілку `gh-pages`. В іншому
-   випадку, в логах виконання скрипта буде вказано в чому проблема.
+User Benefits
+Easy Sorting: Find babysitters quickly by sorting based on your preferences.
+Favorites List: Keep track of babysitters you like the most for easy access and decision-making.
+By leveraging modern technologies and libraries, Nanny-services provides a robust and user-friendly platform for finding reliable babysitting services.
