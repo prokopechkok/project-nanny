@@ -21,7 +21,6 @@ const NanniesList = () => {
   useEffect(() => {
     dispatch(getNannies({ limit: 3 }));
   }, [dispatch]);
-  console.log(nannies);
   const loadMore = () => {
     dispatch(getNannies({ limit: 3, lastKey }));
   };
