@@ -1,10 +1,10 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
-// const API_KEY = import.meta.env.VITE_FIREBASE_API_KEY;
+const API_KEY = import.meta.env.VITE_FIREBASE_API_KEY;
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyDYUy70zbsdAw836kdmowsYZj8T2GWR-jw',
+  apiKey: API_KEY,
   authDomain: 'nannies-c386f.firebaseapp.com',
   databaseURL:
     'https://nannies-c386f-default-rtdb.europe-west1.firebasedatabase.app',
