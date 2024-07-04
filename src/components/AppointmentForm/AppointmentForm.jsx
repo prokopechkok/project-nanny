@@ -42,10 +42,9 @@ const AppointmentForm = ({ name, avatar }) => {
   });
   const [appointmentData, setAppointmentData] = useState(null);
 
-  const onFormSubmit = (formData) => {
-    setAppointmentData(formData);
-    console.log('Appointment data: ' + appointmentData);
-  };
+  const onFormSubmit = (formData) => setAppointmentData(formData);
+  console.log(appointmentData);
+
   return (
     <div className={css.container}>
       <div className={css.titleWrap}>
@@ -66,10 +65,7 @@ const AppointmentForm = ({ name, avatar }) => {
           <h3 className={css.name}>{name}</h3>
         </div>
       </div>
-      <form
-        onSubmit={handleSubmit(() => onFormSubmit(control))}
-        className={css.form}
-      >
+      <form onSubmit={handleSubmit(onFormSubmit)} className={css.form}>
         <div className={css.halfInputs}>
           <div>
             <input
@@ -115,10 +111,29 @@ const AppointmentForm = ({ name, avatar }) => {
                   }}
                   id="time"
                   className={css.customTime}
+                  // popperClassName={css.popper}
+                  // popperModifiers={{
+                  //   offset: {
+                  //     enabled: true,
+                  //     offset: '0, 8',
+                  //   },
+                  //   preventOverflow: {
+                  //     enabled: true,
+                  //     escapeWithReference: false,
+                  //     boundariesElement: 'viewport',
+                  //   },
+                  //   setWidth: {
+                  //     enabled: true,
+                  //     fn: (data) => {
+                  //       data.styles.width = '150px';
+                  //       return data;
+                  //     },
+                  //   },
+                  // }}
                 />
               )}
             ></Controller>
-
+            {/* <input {...register('time')} placeholder="00:00" /> */}
             <p>{errors.time?.message}</p>
             <Icon id="clock" className={css.clockIcon} />
           </div>
@@ -149,11 +164,7 @@ const AppointmentForm = ({ name, avatar }) => {
           />
           <p>{errors.comment?.message}</p>
         </div>
-        <button
-          type="submit"
-          onSubmit={() => onFormSubmit(control)}
-          className={css.submitBtn}
-        >
+        <button type="submit" onSubmit={onFormSubmit} className={css.submitBtn}>
           Send
         </button>
       </form>

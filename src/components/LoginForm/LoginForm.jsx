@@ -65,8 +65,7 @@ const LoginForm = () => {
         </div>
         <div className={css.passWrapper}>
           <input
-            // type={isVisible ? 'text' : 'password'}
-            type="password"
+            type={isVisible ? 'text' : 'password'}
             {...register('password')}
             placeholder="Password"
             className={css.input}
