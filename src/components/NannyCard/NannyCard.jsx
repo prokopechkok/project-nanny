@@ -120,11 +120,9 @@ const NannyCard = ({ nanny }) => {
         )}
       </div>
 
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <AppointmentForm name={name} avatar={avatar_url} />
-        </Modal>
-      )}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <AppointmentForm name={name} avatar={avatar_url} />
+      </Modal>
     </div>
   );
 };
