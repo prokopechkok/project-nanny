@@ -31,10 +31,3 @@ export const sortNannies = (nannies, filter) => {
   }
   return sortedNannies;
 };
-// export const saveAppointment = async (appointment) => {
-//   try {
-//     await push(ref(database, 'appointments'), appointment);
-//   } catch {
-//     toast.error(`Something went wrong. Please try again.`);
-//   }
-// };
